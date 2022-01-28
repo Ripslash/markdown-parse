@@ -12,12 +12,18 @@ public class MarkdownParse {
         ArrayList<String> toReturn = new ArrayList<>();
         // find the next [, then find the ], then find the (, then take up to
         // the next )
+        boolean shatter = true;
         int currentIndex = 0;
         while(currentIndex < markdown.length()) {
             int nextOpenBracket = markdown.indexOf("[", currentIndex);
+            if(nextOpenBracket == -1) break;
             int nextCloseBracket = markdown.indexOf("]", nextOpenBracket);
+            if(nextCloseBracket == -1) break;
             int openParen = markdown.indexOf("(", nextCloseBracket);
+            if(openParen == -1) break;
             int closeParen = markdown.indexOf(")", openParen);
+            if(closeParen == -1) break;
+            //while(shatter == true) {}
             toReturn.add(markdown.substring(openParen + 1, closeParen));
             currentIndex = closeParen + 1;
             System.out.println(currentIndex);

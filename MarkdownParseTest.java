@@ -19,62 +19,66 @@ public class MarkdownParseTest {
         String variablename = Files.readString(Path.of("test-file.md"));
         ArrayList<String> othername = MarkdownParse.getLinks(variablename);
         List morenames = List.of("https://something.com", "some-page.html");
-        assertEquals(othername, morenames);
+        assertEquals(morenames, othername);
     }
 
     @Test
     public void test2() throws IOException {
-        String variablename = Files.readString(Path.of("test-file.md(1)"));
+        String variablename = Files.readString(Path.of("test-file(1).md"));
         ArrayList<String> othername = MarkdownParse.getLinks(variablename);
         List morenames = List.of("https://something.com", "some-page.html");
-        assertEquals(othername, morenames);
+        assertEquals(morenames, othername);
     }
 
     @Test
     public void test3() throws IOException {
-        String variablename = Files.readString(Path.of("test-file.md(2)"));
+        String variablename = Files.readString(Path.of("test-file(2).md"));
         ArrayList<String> othername = MarkdownParse.getLinks(variablename);
-        List morenames = List.of("");
-        assertEquals(othername, morenames);
+        ArrayList<String> morenames = new ArrayList<String>();
+        morenames.add("");
+        assertEquals(morenames, othername);
     }
 
     @Test
     public void test4() throws IOException {
-        String variablename = Files.readString(Path.of("test-file.md(3)"));
+        String variablename = Files.readString(Path.of("test-file(3).md"));
         ArrayList<String> othername = MarkdownParse.getLinks(variablename);
-        List morenames = List.of("");
-        assertEquals(othername, morenames);
+        ArrayList<String> morenames = new ArrayList<String>();
+        morenames.add("");
+        assertEquals(morenames, othername);
     }
 
     @Test
     public void test5() throws IOException {
-        String variablename = Files.readString(Path.of("test-file.md(4)"));
+        String variablename = Files.readString(Path.of("test-file(4).md"));
         ArrayList<String> othername = MarkdownParse.getLinks(variablename);
-        List morenames = List.of("");
-        assertEquals(othername, morenames);
+        ArrayList<String> morenames = new ArrayList<String>();
+        morenames.add("");
+        assertEquals(morenames, othername);
     }
 
     @Test
     public void test6() throws IOException {
-        String variablename = Files.readString(Path.of("test-file.md(5)"));
+        String variablename = Files.readString(Path.of("test-file(5).md"));
         ArrayList<String> othername = MarkdownParse.getLinks(variablename);
         List morenames = List.of("page.com");
-        assertEquals(othername, morenames);
+        assertEquals(morenames, othername);
     }
 
     @Test
     public void test7() throws IOException {
-        String variablename = Files.readString(Path.of("test-file.md(6)"));
+        String variablename = Files.readString(Path.of("test-file(6).md"));
         ArrayList<String> othername = MarkdownParse.getLinks(variablename);
-        List morenames = List.of("");
-        assertEquals(othername, morenames);
+        ArrayList<String> morenames = new ArrayList<String>();
+        morenames.add("");
+        assertEquals(morenames, othername);
     }
 
     @Test
     public void test8() throws IOException {
-        String variablename = Files.readString(Path.of("test-file.md(7)"));
+        String variablename = Files.readString(Path.of("test-file(7).md"));
         ArrayList<String> othername = MarkdownParse.getLinks(variablename);
         List morenames = List.of("https://something.com");
-        assertEquals(othername, morenames);
+        assertEquals(morenames, othername);
     }
 }
