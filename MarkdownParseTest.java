@@ -35,7 +35,7 @@ public class MarkdownParseTest {
         String variablename = Files.readString(Path.of("test-file(2).md"));
         ArrayList<String> othername = MarkdownParse.getLinks(variablename);
         ArrayList<String> morenames = new ArrayList<String>();
-        morenames.add("");
+        //morenames.add("");
         assertEquals(morenames, othername);
     }
 
@@ -44,7 +44,7 @@ public class MarkdownParseTest {
         String variablename = Files.readString(Path.of("test-file(3).md"));
         ArrayList<String> othername = MarkdownParse.getLinks(variablename);
         ArrayList<String> morenames = new ArrayList<String>();
-        morenames.add("");
+        //morenames.add("");
         assertEquals(morenames, othername);
     }
 
@@ -53,7 +53,7 @@ public class MarkdownParseTest {
         String variablename = Files.readString(Path.of("test-file(4).md"));
         ArrayList<String> othername = MarkdownParse.getLinks(variablename);
         ArrayList<String> morenames = new ArrayList<String>();
-        morenames.add("");
+        //morenames.add("");
         assertEquals(morenames, othername);
     }
 
@@ -70,7 +70,7 @@ public class MarkdownParseTest {
         String variablename = Files.readString(Path.of("test-file(6).md"));
         ArrayList<String> othername = MarkdownParse.getLinks(variablename);
         ArrayList<String> morenames = new ArrayList<String>();
-        morenames.add("");
+        //morenames.add("");
         assertEquals(morenames, othername);
     }
 

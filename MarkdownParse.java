@@ -19,13 +19,19 @@ public class MarkdownParse {
             int nextCloseBracket = markdown.indexOf("]", nextOpenBracket);
             if(nextCloseBracket == -1) break;
             int openParen = markdown.indexOf("(", nextCloseBracket); 
+            if(openParen != nextCloseBracket + 1) {
+                currentIndex = nextCloseBracket;
+                continue;
+            }
             if(openParen == -1) break;
             int closeParen = markdown.indexOf(")", openParen);
             if(closeParen == -1) break;
 
-            String newString =  markdown.substring(openParen, closeParen);
-            if(newString.indexOf("(") != -1) {
-                openParen = markdown.indexOf("(", openParen + 1);
+            String newString =  markdown.substring(openParen + 1, closeParen);
+
+            if(newString.indexOf("]") != -1) {
+                nextCloseBracket = markdown.indexOf("", openParen + 1);
+                openParen = markdown.indexOf("(", nextCloseBracket);
             }
 
 
