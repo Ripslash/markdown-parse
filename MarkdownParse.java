@@ -23,7 +23,7 @@ public class MarkdownParse {
                 currentIndex = nextCloseBracket;
                 continue;
             }
-            somethingillegal;
+            //somethingillegal;
             if(openParen == -1) break;
             int closeParen = markdown.indexOf(")", openParen);
             if(closeParen == -1) break;
