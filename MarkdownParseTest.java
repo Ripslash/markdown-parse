@@ -99,7 +99,7 @@ public class MarkdownParseTest {
     public void test11() throws IOException {
         String variablename = Files.readString(Path.of("test-file(11).md"));
         ArrayList<String> othername = MarkdownParse.getLinks(variablename);
-        List morenames = List.of("https://ucsd-cse15l-w22.github.io/, ");
+        List morenames = List.of("https://ucsd-cse15l-w22.github.io/");
         assertEquals(morenames, othername);
     }
 }
